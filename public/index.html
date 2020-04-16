@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+  <!-- Google metarial -->
+  <link href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- user scripts -->
+  <link rel="stylesheet" href="style.css">
+  <!-- <script src="jquery.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <div class="container p-3 my-3 bg-light text-black">
+
+    <!-- Heading task manager -->
+    <h1 id="tmheading">Task Manager</h1>
+
+    <button id="crtbtn" type="button" class="mdc-button mdc-button--raised"
+      onclick="document.getElementById('id01').style.display='block'">
+      <span class="mdc-button__ripple"></span>New Task</button>
+
+    <span id="crtbtn" style="border: 1px solid #6200ee; padding: 3px; border-radius: 4px;">
+      <strong>Sort By : </strong><select onchange="sortby(this.value)">
+        <option selected value="">None</option>
+        <optgroup label="DueDate">
+          <option id="1" value="1">Decrease</option>
+          <option id="2" value="2">Increase</option>
+        </optgroup>
+        <option id="3" value="3">Priority</option>
+        <option id="4" value="4">Status</option>
+      </select>
+    </span>
+
+
+
+    <div id="id01" class="modal">
+      <form class="modal-content animate" action="">
+        <div class="titl">
+          <span>New Task</span>
+        </div>
+        <div class="newcontainer">
+          <input id="newtitle" type="text" placeholder="Enter Title" required>
+          <input id="newdesc" type="text" placeholder="Enter Description">
+          <strong>DueDate : </strong><input id="newdate" style="margin-top: 20px;" type="date"
+            placeholder="Enter Due Date" required>
+          <br>
+          <div style="padding-top:30px;"><strong>Priority : </strong>
+            <select id="newpriority">
+              <option value="1">High</option>
+              <option selected value="2">Medium</option>
+              <option value="3">Low</option>
+            </select>
+          </div>
+          <div style="padding-top:25px;"><strong>Status : </strong>Incomplete</div>
+          <div id="crtbtn" style="margin-top: 35px;">
+            <button class="mdc-button mdc-button--outlined"
+              onclick="document.getElementById('id01').style.display='none'"> <span
+                class="mdc-button__ripple"></span>Cancel</button>
+            <button class="mdc-button mdc-button--raised" id="createnewtask"> <span
+                class="mdc-button__ripple"></span>Create</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+
+    <div id="id02" class="modal">
+      <form class="modal-content animate" action="">
+        <div class="titl">
+          <span>Edit Task</span>
+        </div>
+        <div class="newcontainer">
+          <strong>DueDate : </strong><input id="editnewdate" style="margin-top: 20px;" type="date"
+            placeholder="Enter Due Date" required>
+          <div style="padding-top:30px;"><strong>Priority : </strong>
+            <select id="editnewpriority">
+              <option value="1">High</option>
+              <option selected value="2">Medium</option>
+              <option value="3">Low</option>
+            </select>
+          </div>
+          <div style="padding-top:50px; size: 20px;">
+            <strong>Status : </strong><input id="editnewstatus" type="checkbox">
+          </div>
+          <div id="crtbtn" style="margin-top: 35px;">
+            <button class="mdc-button mdc-button--outlined"
+              onclick="document.getElementById('id02').style.display='none'">
+              <span class="mdc-button__ripple"></span>cancel</button>
+            <button class="mdc-button mdc-button--raised" id="editask"> <span
+                class="mdc-button__ripple"></span>edit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+
+
+    <div id="id03" class="modal">
+      <form class="modal-content animate" action="">
+        <div class="titl">
+          <span>Add New Note</span>
+        </div>
+        <div class="newcontainer">
+          <input id="newnote" type="text" placeholder="Enter new note" required>
+          <div id="crtbtn" style="margin-top: 35px;">
+            <button class="mdc-button mdc-button--outlined"
+              onclick="document.getElementById('id03').style.display='none'">
+              <span class="mdc-button__ripple"></span>cancel</button>
+            <button class="mdc-button mdc-button--raised" id="addnewnote"> <span
+                class="mdc-button__ripple"></span>add</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    </span>
+
+
+
+    <div id="accordion">
+      <div id="cards">
+      </div>
+    </div>
+
+
+
+
+  </div>
+  <script src="functions.js"></script>
+  <script src="script.js"></script>
+  <script src="createnewtask.js"></script>
+  <script src="addnewnote.js"></script>
+  <script src="editask.js"></script>
+  <script src="sorting.js"></script>
+</body>
+
+</html>
