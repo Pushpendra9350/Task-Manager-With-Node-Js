@@ -1,7 +1,6 @@
 # Task Manager With Node Js
 
 To access this Web portal go to this link -> https://task-manager-with-nodejs.herokuapp.com/
-This is hosted on HEROKU.COM
 
 ## Features
 1. We can create a new assignment/task with due date and priority level.
