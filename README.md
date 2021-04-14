@@ -9,14 +9,13 @@ This is hosted on HEROKU.COM
 3. We can change the status of the task from incomplete to complete.
 
 ## Components
-1. It shows a list of the tasks.
-2. On each task we have:
-3. Title
-4. Description
-5. Status
-6. Due Date
-7. Priority
-8. And an edit button to edit further
+1. List of the tasks.
+2. Title
+3. Description
+4. Status
+5. Due Date
+6. Priority
+7. And an edit button to edit further
 
 ## More features
 1. When you click on any task then it will extpand and after that we add a new note to that perticular task.
