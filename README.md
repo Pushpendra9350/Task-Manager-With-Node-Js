@@ -11,7 +11,7 @@ This is hosted on HEROKU.COM
 ## Components
 1. It shows a list of the tasks.
 2. On each task we have:
-3. itle
+3. Title
 4. Description
 5. Status
 6. Due Date
